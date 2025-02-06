@@ -12,4 +12,10 @@ function getComputerChoice() {
 }
 
 // Get human choice
+
+let getHumanChoice = () => prompt("Choose rock, paper or scissors:");
+
 // keep score for Both
+
+let humanScore = 0,
+  computerScore = 0;
