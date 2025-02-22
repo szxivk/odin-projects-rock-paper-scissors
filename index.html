@@ -10,16 +10,20 @@
   <body>
     <div class="options">
       <div class="buttons">
-        <div class="human-choice">Your choice:</div>
+        <span>User choice:</span>
         <button id="rock">Rock!</button>
         <button id="paper">Paper!</button>
         <button id="scissors">Scissors!</button>
       </div>
-      <div class="score">Score:</div>
+      <div class="score">
+        User Score:
+        <span id="score"></span>
+      </div>
     </div>
-    <div class="computer-choice">
-      Computer's choice:
-      <span id="comp-choice"></span>
+    <div class="history">
+      <h3 class="game-log">Game Log</h3>
+      <div class="computer-choice"></div>
+      <div class="result"></div>
     </div>
   </body>
 </html>

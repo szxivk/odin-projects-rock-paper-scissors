@@ -25,3 +25,14 @@ button {
   font-weight: bold;
   border-radius: 6px;
 }
+
+.history {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+.game-log,
+p {
+  border-right: 2px solid red;
+  padding-right: 32px;
+}
