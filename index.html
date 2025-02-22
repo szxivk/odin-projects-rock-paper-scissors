@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="options">
+      <div class="buttons">
+        <div class="human-choice">Your choice:</div>
+        <button id="rock">Rock!</button>
+        <button id="paper">Paper!</button>
+        <button id="scissors">Scissors!</button>
+      </div>
+      <div class="score">Score:</div>
+    </div>
+    <div class="computer-choice">
+      Computer's choice:
+      <span id="comp-choice"></span>
+    </div>
+  </body>
 </html>
