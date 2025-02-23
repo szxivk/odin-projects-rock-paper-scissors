@@ -1,15 +1,17 @@
 body {
-  margin: 8px;
+  height: 100%;
+  margin: 16px 256px;
+  padding: 16px;
+  border: black solid 4px;
+  border-radius: 10px;
 }
 
 .options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 2px solid red; */
-  padding: 0px;
   margin-bottom: 10px;
-  border-bottom: 2px black solid;
+  border-bottom: 1px black solid;
   padding-bottom: 8px;
 }
 
@@ -26,13 +28,25 @@ button {
   border-radius: 6px;
 }
 
+button:hover {
+  background-color: antiquewhite;
+}
+
 .history {
   display: flex;
   gap: 56px;
   align-items: center;
 }
 .game-log,
-p {
-  border-right: 2px solid red;
+.computer-choice {
+  border-right: 2px solid crimson;
   padding-right: 32px;
+}
+
+.game-log {
+  align-self: self-start;
+}
+
+#score {
+  color: crimson;
 }
