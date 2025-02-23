@@ -102,9 +102,8 @@ function playRound(h_choice, c_choice) {
 function winner(h_score, c_score) {
   if (h_score > c_score) {
     alert("You Won! Refresh page to play again");
-    userScore.textContent = "You Won";
   } else {
     alert("You Lose! Refresh page to play again");
-    userScore.textContent = "You Lost";
   }
+  userScore.textContent = "Refresh Page!";
 }
