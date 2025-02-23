@@ -7,13 +7,22 @@ const options = document.querySelector(".buttons");
 
 const userScore = document.querySelector("#score");
 
+const compChoiceDiv = document.querySelector(".computer-choice");
+
+const resultDiv = document.querySelector(".result");
+
 options.addEventListener("click", (e) => {
   const target = e.target;
   const computerChoice = getComputerChoice();
+  let cChoice = document.createElement("p");
+
   switch (target.id) {
     case "rock":
       playRound("rock", computerChoice);
       userScore.textContent = humanScore;
+      cChoice = document.createElement("p");
+      cChoice.textContent = "Computer chose " + computerChoice;
+      compChoiceDiv.appendChild(cChoice);
       if (humanScore >= 5 || computerScore >= 5) {
         winner(humanScore, computerScore);
       }
@@ -21,6 +30,9 @@ options.addEventListener("click", (e) => {
     case "paper":
       playRound("paper", computerChoice);
       userScore.textContent = humanScore;
+      cChoice = document.createElement("p");
+      cChoice.textContent = "Computer chose " + computerChoice;
+      compChoiceDiv.appendChild(cChoice);
       if (humanScore >= 5 || computerScore >= 5) {
         winner(humanScore, computerScore);
       }
@@ -28,7 +40,10 @@ options.addEventListener("click", (e) => {
     case "scissors":
       playRound("scissors", computerChoice);
       userScore.textContent = humanScore;
-      if (humanScore >= 5 || computerScore >= 5) {
+      cChoice = document.createElement("p");
+      cChoice.textContent = "Computer chose " + computerChoice;
+      compChoiceDiv.appendChild(cChoice);
+      if (humanScore === 5 || computerScore === 5) {
         winner(humanScore, computerScore);
       }
       break;
@@ -51,30 +66,33 @@ function getComputerChoice() {
 // single round logic
 
 function playRound(h_choice, c_choice) {
+  const roundResult = document.createElement("p");
   if (c_choice === h_choice) {
-    console.log(`Nobody wins! Both chose ${c_choice}.`);
+    roundResult.textContent = "Nobody wins! Both chose " + c_choice;
+    resultDiv.appendChild(roundResult);
   } else if (c_choice === "rock" && h_choice === "paper") {
-    console.log(`You win! ${h_choice} beats ${c_choice}.`);
+    roundResult.textContent = "You win! " + h_choice + " beats " + c_choice;
+    resultDiv.appendChild(roundResult);
     humanScore += 1;
   } else if (c_choice === "rock" && h_choice === "scissors") {
-    console.log(`You lose! ${c_choice} beats ${h_choice}.`);
-
+    roundResult.textContent = "You lose! " + c_choice + " beats " + h_choice;
+    resultDiv.appendChild(roundResult);
     computerScore += 1;
   } else if (c_choice === "paper" && h_choice === "scissors") {
-    console.log(`You win! ${h_choice} beats ${c_choice}.`);
-
+    roundResult.textContent = "You win! " + h_choice + " beats " + c_choice;
+    resultDiv.appendChild(roundResult);
     humanScore += 1;
   } else if (c_choice === "paper" && h_choice === "rock") {
-    console.log(`You lose! ${c_choice} beats ${h_choice}.`);
-
+    roundResult.textContent = "You lose! " + c_choice + " beats " + h_choice;
+    resultDiv.appendChild(roundResult);
     computerScore += 1;
   } else if (c_choice === "scissors" && h_choice === "rock") {
-    console.log(`You win! ${h_choice} beats ${c_choice}.`);
-
+    roundResult.textContent = "You win! " + h_choice + " beats " + c_choice;
+    resultDiv.appendChild(roundResult);
     humanScore += 1;
   } else if (c_choice === "scissors" && h_choice === "paper") {
-    console.log(`You lose! ${c_choice} beats ${h_choice}.`);
-
+    roundResult.textContent = "You lose! " + c_choice + " beats " + h_choice;
+    resultDiv.appendChild(roundResult);
     computerScore += 1;
   }
 }
@@ -84,7 +102,9 @@ function playRound(h_choice, c_choice) {
 function winner(h_score, c_score) {
   if (h_score > c_score) {
     alert("You Won! Refresh page to play again");
+    userScore.textContent = "You Won";
   } else {
     alert("You Lose! Refresh page to play again");
+    userScore.textContent = "You Lost";
   }
 }
