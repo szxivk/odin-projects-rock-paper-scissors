@@ -1,11 +1,11 @@
 let humanScore = 0,
   computerScore = 0;
 
-const score = document.querySelector(".score");
+const scoreDiv = document.querySelector(".score");
 
 const options = document.querySelector(".buttons");
 
-const compChoice = document.querySelector();
+const userScore = document.querySelector("#score");
 
 options.addEventListener("click", (e) => {
   const target = e.target;
@@ -13,19 +13,21 @@ options.addEventListener("click", (e) => {
   switch (target.id) {
     case "rock":
       playRound("rock", computerChoice);
-
+      userScore.textContent = humanScore;
       if (humanScore >= 5 || computerScore >= 5) {
         winner(humanScore, computerScore);
       }
       break;
     case "paper":
       playRound("paper", computerChoice);
+      userScore.textContent = humanScore;
       if (humanScore >= 5 || computerScore >= 5) {
         winner(humanScore, computerScore);
       }
       break;
     case "scissors":
       playRound("scissors", computerChoice);
+      userScore.textContent = humanScore;
       if (humanScore >= 5 || computerScore >= 5) {
         winner(humanScore, computerScore);
       }
