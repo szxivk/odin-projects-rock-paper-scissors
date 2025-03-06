@@ -1,18 +1,23 @@
 # The Odin Project: Rock Paper Scissors
 
-A simple Rock Paper Scissors game in JavaScript, playable in the browser's console.
+A simple Rock Paper Scissors game in JavaScript, playable in the browser.
 
-## How to Play
+## Screenshots
 
-1. Clone: `git clone https://github.com/szxivk/odin-projects-rock-paper-scissors.git`
-2. Open `index.html` in your browser.
-3. Open the browser's developer console (F12).
-4. Follow the prompts.
+![rock paper scissors Screenshot](images/screencapture-szxivk-rock-paper-scissors-2025-03-07-01_30_44.png)
 
-## Technologies
+## Setup
 
-JavaScript
+1.  Clone the repository:
 
-## Future Enhancements
+    ```bash
+    git clone https://github.com/szxivk/odin-projects-rock-paper-scissors.git
+    ```
 
-- GUI
+2.  Open `index.html` in your browser.
+
+## Tech Stack
+
+- **HTML**
+- **CSS**
+- **JavaScript**
